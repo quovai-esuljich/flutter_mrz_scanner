@@ -1,3 +1,13 @@
+## 2.2.1-quovai.1
+
+* Fix the Android preview rendering as a blank/white view (#15). The native
+  view renders the camera preview into a nested `TextureView`, which
+  Flutter's default `AndroidView` composition cannot capture into the
+  composited frame. Render the `mrzscanner` platform view with full Hybrid
+  Composition instead, which does support nested `TextureView` content.
+* Quovai fork of 2.2.1 — carries only the fix above, without the 2.3.0 SDK
+  constraint bump, so it still works on our pinned Flutter version.
+
 ## 2.2.1
 
 * Fix Android 16KB Page size incompatibility by updating tesseract4android to 4.9.0 (by @khamidjon)
